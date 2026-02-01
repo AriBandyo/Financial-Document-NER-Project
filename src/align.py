@@ -38,7 +38,7 @@ def align_labels_with_tokenizer(
     word_ids = encoding.word_ids()  # maps each wordpiece to original token index (or None)
     wp_tokens = tokenizer.convert_ids_to_tokens(encoding["input_ids"])
 
-    # ✅ IMPORTANT: build a label map that includes I-XXX for every B-XXX
+    #  IMPORTANT: build a label map that includes I-XXX for every B-XXX
     label2id = build_label_map(tags)
 
     aligned_tags: List[str] = []
