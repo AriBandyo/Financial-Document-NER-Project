@@ -96,13 +96,13 @@ def main() -> None:
 
     trainer.train()
     metrics = trainer.evaluate()
-    print("\n✅ Final eval:", metrics)
+    print("\n Final eval:", metrics)
 
     out_dir = project_root / "artifacts" / "fin_ner_model"
     out_dir.mkdir(parents=True, exist_ok=True)
     trainer.save_model(str(out_dir))
     tokenizer.save_pretrained(str(out_dir))
-    print(f"\n✅ Saved fine-tuned model to: {out_dir}")
+    print(f"\n Saved fine-tuned model to: {out_dir}")
 
 
 if __name__ == "__main__":
